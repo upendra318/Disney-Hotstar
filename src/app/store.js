@@ -8,6 +8,8 @@ export default configureStore({
         user: userReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: false,
+        serializableCheck: {
+          ignoredPaths: ['someSlice.nested.field']
+        }
       })
 })
